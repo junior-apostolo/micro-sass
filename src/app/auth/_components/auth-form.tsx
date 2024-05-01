@@ -59,7 +59,7 @@ export function AuthForm() {
                 type="email"
               />
             </div>
-            <Button className="w-full" type="submit">
+            <Button variant={'default'} className="w-full" type="submit">
               Send Magic Link
             </Button>
           </form>

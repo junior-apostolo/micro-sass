@@ -1,5 +1,13 @@
-export default function Home() {
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { auth } from "@/services/auth";
+import { UserInfo } from "./_components/user-info";
+
+export default async function Home() {
+  const session = await auth();
   return (
-    <h1>home Page</h1>
-  )
+    <main className="flex items-center justify-center h-screen">
+      <UserInfo user={session?.user}/>
+    </main>
+  );
 }
