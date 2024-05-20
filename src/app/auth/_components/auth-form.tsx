@@ -21,7 +21,6 @@ export function AuthForm() {
   const formSubmit = handleSubmit(async (data) => {
     try {
       await signIn("email", { email: data.email, redirect: false });
-
       toast({
         title: "Magic Link Sent",
         description: "Check your email for the magic link to login",
@@ -59,11 +58,11 @@ export function AuthForm() {
                 type="email"
               />
             </div>
-            <Button variant={'default'} className="w-full" type="submit">
+            <Button variant={"default"} className="w-full" type="submit">
               Send Magic Link
             </Button>
           </form>
-          {/* <div className="mt-4 text-center text-sm">
+          <div className="mt-4 text-center text-sm">
             Or sign in with
             <Link className="font-medium underline" href="#">
               Google
@@ -72,7 +71,7 @@ export function AuthForm() {
             <Link className="font-medium underline" href="#">
               GitHub
             </Link>
-          </div> */}
+          </div>
         </CardContent>
       </Card>
     </div>

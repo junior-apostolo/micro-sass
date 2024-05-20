@@ -7,11 +7,6 @@ export function middleware(request: NextRequest) {
   // Busca o caminho da url, da pagina acessada
   const pathname = request.nextUrl.pathname;
 
-  console.log({
-    token: token?.value,
-    pathname,
-  });
-
   // Se a pagina for de autenticação e existir o token do usuario faz o redirecionamento para sessão autenticada
   if (pathname === "/auth" && token) {
     return NextResponse.redirect(new URL(getUrl("/app")));
