@@ -1,23 +1,13 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-// export function Sidebar() {
-//   return (
-//     <aside className="border-r border-border">
-//       <nav>
-//         <a href=""></a>
-//       </nav>
-//     </aside>
-//   );
-// }
-
-export type SideBarGenericProps<T = unknown> = {
+export type DashboardSideBarGenericProps<T = unknown> = {
   children: React.ReactNode;
   className?: string;
 } & T;
 
-export function Sidebar({ children, className }: SideBarGenericProps) {
+export function DashboardSidebar({ children, className }: DashboardSideBarGenericProps) {
   return (
     <aside
       className={cn([
@@ -30,33 +20,33 @@ export function Sidebar({ children, className }: SideBarGenericProps) {
   );
 }
 
-export function SidebarHeader({ children, className }: SideBarGenericProps) {
-  return <h2 className={cn(["px-6", className])}>{children}</h2>;
+export function DashboardSidebarHeader({ children, className }: DashboardSideBarGenericProps) {
+  return <h1 className={cn(["px-6 py-3 border-b border-border", className])}>{children}</h1>;
 }
 
-export function SidebarHeaderTitle({
+export function DashboardSidebarHeaderTitle({
   children,
   className,
-}: SideBarGenericProps) {
+}: DashboardSideBarGenericProps) {
   return <header className={cn(["", className])}>{children}</header>;
 }
 
-export function SidebarMain({ children, className }: SideBarGenericProps) {
-  return <main className={cn(["pt-6 px-3", className])}>{children}</main>;
+export function DashboardSidebarMain({ children, className }: DashboardSideBarGenericProps) {
+  return <main className={cn(["px-3", className])}>{children}</main>;
 }
 
-export function SidebarNav({ children, className }: SideBarGenericProps) {
+export function DashboardSidebarNav({ children, className }: DashboardSideBarGenericProps) {
   return <nav className={cn(["", className])}>{children}</nav>;
 }
 
-export function SidebarNavHeader({ children, className }: SideBarGenericProps) {
+export function DashboardSidebarNavHeader({ children, className }: DashboardSideBarGenericProps) {
   return <header className={cn(["", className])}>{children}</header>;
 }
 
-export function SidebarNavHeaderTitle({
+export function DashboardSidebarNavHeaderTitle({
   children,
   className,
-}: SideBarGenericProps) {
+}: DashboardSideBarGenericProps) {
   return (
     <span
       className={cn([
@@ -69,32 +59,32 @@ export function SidebarNavHeaderTitle({
   );
 }
 
-export function SidebarNavMain({ children, className }: SideBarGenericProps) {
+export function DashboardSidebarNavMain({ children, className }: DashboardSideBarGenericProps) {
   return <main className={cn(["flex flex-col", className])}>{children}</main>;
 }
 
-type SidebarNavLinkProps = {
+type DashboardSidebarNavLinkProps = {
   href: string;
   active?: boolean;
 };
 
-export function SidebarNavLink({
+export function DashboardSidebarNavLink({
   children,
   className,
   href,
   active,
-}: SideBarGenericProps<SidebarNavLinkProps>) {
+}: DashboardSideBarGenericProps<DashboardSidebarNavLinkProps>) {
   return (
     <Link
       href={href}
-      className={cn(["text-xs px-3 py-2 rounded-md", active && "bg-secondary", className])}
+      className={cn(["text-sm px-3 py-2 rounded-md flex items-center", active && "bg-secondary", className])}
     >
       {children}
     </Link>
   );
 }
 
-export function SidebarFooter({ children, className }: SideBarGenericProps) {
+export function DashboardSidebarFooter({ children, className }: DashboardSideBarGenericProps) {
   return (
     <footer className={cn(["p-6 mt-auto border-t border-border", className])}>
       {children}
